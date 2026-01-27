@@ -1,0 +1,3 @@
+Add your profile photo here.
+Recommended filename: profile.jpg
+Recommended size: 420x420px or larger (square ratio)
