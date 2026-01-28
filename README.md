@@ -2,12 +2,16 @@
 
 # 🌟 Modern Portfolio Website
 
+[![Development Status](https://img.shields.io/badge/Status-🚧%20In%20Development-yellow?style=for-the-badge)]()
+[![Progress](https://img.shields.io/badge/Progress-75%25-orange?style=for-the-badge)]()
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Responsive](https://img.shields.io/badge/Responsive-Yes-brightgreen?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
 
 **A sleek, responsive personal portfolio website built with modern web technologies featuring glass-morphism design and smooth animations.**
+
+> ⚠️ **Note**: This project is currently under active development. Some features may be incomplete or subject to change.
 
 [🚀 Live Demo](#) • [📖 Documentation](#-sections) • [⚙️ Setup Guide](#-getting-started)
 
@@ -115,18 +119,6 @@ start index.html # Windows
 xdg-open index.html # Linux
 ```
 
-### 🐳 Alternative: Using Python Server
-
-```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-
-# Then visit: http://localhost:8000
-```
-
 ## ⚙️ Configuration
 
 ### 📧 Contact Form Setup
@@ -215,30 +207,6 @@ const skillsData = [
 | **3D Transforms** | `perspective()` & `rotateX/Y()` | Interactive profile image |
 | **Smooth Transitions** | CSS `transition` & `@keyframes` | Fluid user interactions |
 
-### 🎭 Animation Library
-
-```css
-/* Key Animations */
-@keyframes haloFloat1 { /* Floating background elements */ }
-@keyframes fadeUp { /* Scroll-triggered entrance */ }
-@keyframes typeWriter { /* Text typing effect */ }
-```
-
-### 🔤 Typography
-
-- **Primary**: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) - Headings & brand
-- **Secondary**: [Inter](https://fonts.google.com/specimen/Inter) - Body text & UI
-- **Weights**: 400, 500, 600, 700
-
-## 🔧 Browser Support
-
-| Browser | Version |
-|---------|---------|
-| Chrome | 88+ |
-| Firefox | 84+ |
-| Safari | 14+ |
-| Edge | 88+ |
-
 ## 📈 Performance & Optimization
 
 ### ⚡ Performance Metrics
@@ -272,48 +240,6 @@ const skillsData = [
   - DevIcons CDN for skill icons
   - Formspree for form handling
 
-## 🤝 Contributing
-
-Contributions make the open source community amazing! Any contributions are **greatly appreciated**.
-
-### 🔄 Development Workflow
-
-1. **Fork** the repository
-2. **Clone** your fork locally
-   ```bash
-   git clone https://github.com/your-username/portfolio.git
-   ```
-3. **Create** a feature branch
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-4. **Make** your changes
-5. **Test** thoroughly
-6. **Commit** with descriptive message
-   ```bash
-   git commit -m "✨ Add amazing feature"
-   ```
-7. **Push** to your branch
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-8. **Open** a Pull Request
-
-### 📝 Contribution Guidelines
-
-- 🐛 **Bug Reports**: Use issue templates
-- ✨ **Feature Requests**: Describe use case
-- 🔧 **Code Style**: Follow existing patterns
-- 📚 **Documentation**: Update README if needed
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License - feel free to use this project for personal or commercial purposes!
-```
-
 ## 🙏 Acknowledgments
 
 <div align="center">
@@ -329,32 +255,19 @@ MIT License - feel free to use this project for personal or commercial purposes!
 
 </div>
 
-## 📞 Support & Contact
+## 👨‍💻 Author
 
-<div align="center">
+**Piyush Kumar**  
+🚀Full Stack Developer | ☁️Cloud & DevOps | 🟢Android Developer
 
-### 💬 Get Help
+<h3 align="center">📬 Let's Connect</h3>
 
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-red?style=for-the-badge&logo=github)](https://github.com/your-username/portfolio/issues)
-[![Discussions](https://img.shields.io/badge/GitHub-Discussions-blue?style=for-the-badge&logo=github)](https://github.com/your-username/portfolio/discussions)
-
-**Found a bug?** [Open an issue](https://github.com/your-username/portfolio/issues/new)  
-**Have a question?** [Start a discussion](https://github.com/your-username/portfolio/discussions/new)  
-**Need help?** Check out the [documentation](#-sections)
-
-</div>
-
----
-
-<div align="center">
-
-### 🌟 Show Your Support
-
-**Give a ⭐ if this project helped you!**
-
-[![GitHub stars](https://img.shields.io/github/stars/your-username/portfolio?style=social)](https://github.com/your-username/portfolio/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/portfolio?style=social)](https://github.com/your-username/portfolio/network/members)
-
-**Made with ❤️ and lots of ☕**
-
-</div>
+<p align="center">
+  <a href="https://my-portfolio-umber-zeta-11.vercel.app/" target="_blank">🌐 Portfolio</a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/mr-piyushkr" target="_blank">💻 GitHub</a>
+  &nbsp;•&nbsp;
+  <a href="https://linkedin.com/in/piyushkumar06" target="_blank">💼 LinkedIn</a>
+  &nbsp;•&nbsp;
+  <a href="mailto:0602.piyushkumar@gmail.com">📧 Email</a>
+</p>
