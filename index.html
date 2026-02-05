@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11/dist/framer-motion.js"></script>
+
 </head>
 
 <body>
@@ -144,27 +144,58 @@
 
         <!-- Header -->
         <div class="project-header">
-            <div class="project-logo">Logo</div>
+            <div class="project-logo">🚀</div>
             <div>
-                <h2 class="project-title">Project Title</h2>
-                <p class="project-desc">Description project</p>
+                <h2 class="project-title">Featured Projects</h2>
+                <p class="project-desc">Showcase of my recent work and contributions</p>
             </div>
         </div>
 
-        <!-- Grid -->
-        <div class="project-grid">
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
-            <div class="grid-small"></div>
+        <!-- Project Filter Tabs -->
+        <div class="project-tabs">
+            <button class="project-tab-btn active" data-category="all">All</button>
+            <button class="project-tab-btn" data-category="fullstack">Full Stack</button>
+            <button class="project-tab-btn" data-category="frontend">Front End</button>
+            <button class="project-tab-btn" data-category="cloud">Cloud and DevOps</button>
+            <button class="project-tab-btn" data-category="android">Android</button>
+            <button class="project-tab-btn" data-category="ml">Data And ML</button>
+        </div>
 
-            <div class="grid-large"></div>
+        <!-- Grid -->
+        <div class="project-grid" id="projectGrid">
+            <!-- Projects will be dynamically generated here -->
         </div>
     </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <div class="modal-tech" id="modalTech"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images" id="modalImages"></div>
+                <div class="modal-description" id="modalDescription"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-btn" id="modalGithub" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+                <a href="#" class="modal-btn modal-btn-secondary" id="modalLive" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                    </svg>
+                    Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
 
     <section class="contact-section">
         <div class="contact-container">
@@ -232,275 +263,7 @@
     </section>
 
 
-    <script>
-        document.addEventListener("mousemove", (e) => {
-            document.querySelectorAll(".blob").forEach((blob, i) => {
-                blob.style.transform = `translate(${e.clientX * 0.01 * i}px, ${e.clientY * 0.01 * i}px)`;
-            });
-        });
-
-        // Profile image 3D tilt effect
-        const profileImg = document.querySelector('.profile-img');
-        if (profileImg) {
-            profileImg.addEventListener('mousemove', (e) => {
-                const rect = profileImg.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / centerY * -10;
-                const rotateY = (x - centerX) / centerX * 10;
-                
-                profileImg.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
-            });
-            
-            profileImg.addEventListener('mouseleave', () => {
-                profileImg.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-            });
-        }
-
-        // Skills Section
-        const skillsData = [
-            { id: 1, name: 'React', category: 'frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-            { id: 2, name: 'JavaScript', category: 'frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-            { id: 3, name: 'TypeScript', category: 'frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-            { id: 4, name: 'HTML5', category: 'frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-            { id: 5, name: 'CSS3', category: 'frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-            { id: 6, name: 'Java', category: 'backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-            { id: 7, name: 'Spring', category: 'backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
-            { id: 8, name: 'Node.js', category: 'backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-            { id: 9, name: 'Python', category: 'backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-            { id: 10, name: 'MySQL', category: 'backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-            { id: 11, name: 'Docker', category: 'devops', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-            { id: 12, name: 'AWS', category: 'devops', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-            { id: 13, name: 'Git', category: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-            { id: 14, name: 'VS Code', category: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-            { id: 15, name: 'GitHub', category: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-            { id: 16, name: 'Figma', category: 'tools', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' }
-        ];
-
-        const skillsGrid = document.getElementById('skillsGrid');
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        let activeCategory = 'all';
-
-        const renderSkills = (category = 'all') => {
-            const filteredSkills = category === 'all' ? skillsData : skillsData.filter(skill => skill.category === category);
-            
-            skillsGrid.innerHTML = filteredSkills.map(skill => `
-                <div class="skill-card" data-category="${skill.category}" data-name="${skill.name}">
-                    <img src="${skill.icon}" alt="${skill.name}" class="skill-icon">
-                </div>
-            `).join('');
-        };
-
-        const handleTabClick = (e) => {
-            if (!e.target.classList.contains('tab-btn')) return;
-            
-            tabBtns.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
-            
-            activeCategory = e.target.dataset.category;
-            renderSkills(activeCategory);
-        };
-
-        document.querySelector('.skills-tabs').addEventListener('click', handleTabClick);
-        renderSkills();
-
-        // Contact Form
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const btnText = submitBtn.querySelector('.btn-text');
-        const btnLoading = submitBtn.querySelector('.btn-loading');
-
-        const validateForm = () => {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            let isValid = true;
-
-            // Clear previous errors
-            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-
-            if (!name) {
-                document.getElementById('nameError').textContent = 'Name is required';
-                isValid = false;
-            }
-
-            if (!email) {
-                document.getElementById('emailError').textContent = 'Email is required';
-                isValid = false;
-            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email';
-                isValid = false;
-            }
-
-            if (!message) {
-                document.getElementById('messageError').textContent = 'Message is required';
-                isValid = false;
-            }
-
-            return isValid;
-        };
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            if (!validateForm()) return;
-
-            submitBtn.disabled = true;
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline';
-
-            try {
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    contactForm.reset();
-                } else {
-                    alert('Failed to send message. Please try again.');
-                }
-            } catch (error) {
-                alert('Error sending message. Please try again.');
-            } finally {
-                submitBtn.disabled = false;
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
-            }
-        });
-
-        // Copy to clipboard functionality
-        document.querySelectorAll('.copyable').forEach(element => {
-            element.addEventListener('click', async () => {
-                const textToCopy = element.getAttribute('data-copy');
-                try {
-                    await navigator.clipboard.writeText(textToCopy);
-                    
-                    // Show feedback
-                    const originalText = element.textContent;
-                    element.textContent = 'Copied!';
-                    element.style.color = '#10b981';
-                    
-                    setTimeout(() => {
-                        element.textContent = originalText;
-                        element.style.color = '#fff';
-                    }, 2000);
-                } catch (err) {
-                    // Fallback for older browsers
-                    const textArea = document.createElement('textarea');
-                    textArea.value = textToCopy;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textArea);
-                    
-                    const originalText = element.textContent;
-                    element.textContent = 'Copied!';
-                    element.style.color = '#10b981';
-                    
-                    setTimeout(() => {
-                        element.textContent = originalText;
-                        element.style.color = '#fff';
-                    }, 2000);
-                }
-            });
-        });
-
-        // Typewriter effect
-        const typewriterElement = document.getElementById('typewriter');
-        const texts = ['Piyush kumar', 'Software Developer', 'Fullstack Developer', 'Android Developer'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typewriterTimeout;
-        let isTypewriterActive = false;
-        
-        function resetTypewriter() {
-            clearTimeout(typewriterTimeout);
-            textIndex = 0;
-            charIndex = 0;
-            isDeleting = false;
-            typewriterElement.textContent = '';
-        }
-        
-        function typeWriter() {
-            if (!isTypewriterActive) return;
-            
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                typeSpeed = textIndex === 0 ? 2000 : 1500;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-            
-            typewriterTimeout = setTimeout(typeWriter, typeSpeed);
-        }
-
-        // Scroll animation observer
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, observerOptions);
-        
-        // Typewriter observer for about section
-        const typewriterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    resetTypewriter();
-                    isTypewriterActive = true;
-                    typewriterTimeout = setTimeout(typeWriter, 500);
-                } else {
-                    isTypewriterActive = false;
-                    clearTimeout(typewriterTimeout);
-                }
-            });
-        }, { threshold: 0.3 });
-
-        // Observe all sections and their children
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll(
-                '.about-container, .toc-container, .category-title, .project-header, .project-grid, .thank-content'
-            );
-            animateElements.forEach(el => {
-                el.classList.add('fade-up');
-                observer.observe(el);
-            });
-            
-            // Observe about section for typewriter reset
-            const aboutSection = document.querySelector('.about-section');
-            if (aboutSection) {
-                typewriterObserver.observe(aboutSection);
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
